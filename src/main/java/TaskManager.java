@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.ArrayList;
 
 public class TaskManager {
@@ -7,9 +8,13 @@ public class TaskManager {
         this.UserTasks = new ArrayList<>();
     }
 
-    public void addTask(Task t){
-        UserTasks.add(t);
-        System.out.printf("Added task \"%s\" to your Task Manager (Total tasks: %d).", t.getTitle(), UserTasks.size());
+    public void addTask(){
+        
+        // Add create task functionality
+
+
+
+        //System.out.printf("Added task \"%s\" to your Task Manager (Total tasks: %d).", t.getTitle(), UserTasks.size());
     }
 
     public void removeTask(Task t){
