@@ -1,7 +1,7 @@
 enum PriorityLevel{
     LOW,
     MEDIUM,
-    HIGH
+    HIGH 
 }
 
 public class Task {
