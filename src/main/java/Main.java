@@ -1,7 +1,6 @@
 import java.util.Scanner;
-/*import java.util.function.Consumer;
-import java.util.ArrayList;
-//import java.util.HashMap; */
+import java.io.FileWriter;
+
 
 public class Main{
 
@@ -13,7 +12,8 @@ public class Main{
 
         String mainMenu = "\n \nWelcome to the TaskManager Menu. Select an option: ";
         String continuationPrompt = "\n \nWhat would you like to do?";
-        String promptList = "\n1: Add Task \n 2: List Tasks \n 3) Update Task \n 4) Remove Task \n 5) Complete Task \n 6: Exit.";
+        String promptList = "\n 1: Add Task \n 2: List Tasks \n 3) Update Task \n " +
+        "4) Remove Task \n 5) Complete Task \n 6) Save \n 7) Load \n 8: Exit.";
         
 
         
@@ -50,10 +50,10 @@ public class Main{
                     taskManager.printTasks();
 
                     index = Integer.parseInt(input.nextLine()) - 1;
-                    if(index < 0 || index > taskManager.UserTasks.size()){
-                        System.out.println("Invalid index, please try again.");
-                    }else{
+                    try{
                         taskManager.removeTask(taskManager.UserTasks.get(index));
+                    } catch (IndexOutOfBoundsException e){
+                        System.out.println("Invalid index, cancelling operation.");
                     }
                     continue;
                 case 5: // Complete Task
@@ -67,7 +67,11 @@ public class Main{
                         taskManager.markTaskCompleted(taskManager.UserTasks.get(index));
                     }
                     continue;
-                case 6: // Exit
+                case 6: // Save
+                    
+                case 7: // Load
+                    
+                case 8: // Exit
                     running = false;
                     System.out.println("Now exiting TaskManager.");
                     break;

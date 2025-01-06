@@ -8,6 +8,15 @@ public class TaskManager {
         this.UserTasks = new ArrayList<>();
     }
 
+    public void verifyIndex(int i){
+        /*try{
+            if this.UserTasks.get(i - 1) != null;
+        } catch(IndexOutOfBoundsException e){
+            System.out.println("Invalid index");
+        }*/
+    }
+    
+
     public Task newTask(Scanner input){ // requires input
         System.out.println("What is the name of the task? ");
         String nName = input.nextLine();
@@ -57,11 +66,11 @@ public class TaskManager {
         System.out.println("Which task would you like to update?");
         this.printTasks();
 
-        int taskIndex = Integer.parseInt(input.nextLine());
+        int taskIndex = Integer.parseInt(input.nextLine()) - 1;
         System.out.println("Great, now you can update this task with a new one: ");
         
         Task toUpdateTask = this.newTask(input);
-        this.UserTasks.add(taskIndex, toUpdateTask);
+        this.UserTasks.set(taskIndex, toUpdateTask);
     }
 
 
