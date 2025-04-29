@@ -1,4 +1,4 @@
-```
+
 ## 1. Linked Lists 
 
 **Definition & Variants**  
