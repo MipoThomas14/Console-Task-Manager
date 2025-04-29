@@ -1,4 +1,4 @@
-```markdown
+```
 ## 1. Linked Lists 
 
 **Definition & Variants**  
