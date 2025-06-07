@@ -61,16 +61,18 @@ public class Main{
                     taskManager.printTasks();
                     
                     index = Integer.parseInt(input.nextLine()) - 1;
-                    if(index < 0 || index > taskManager.UserTasks.size()){
+                    if(index < 0 || index >= taskManager.UserTasks.size()){
                         System.out.println("Invalid index, please try again.");
                     }else{
                         taskManager.markTaskCompleted(taskManager.UserTasks.get(index));
                     }
                     continue;
                 case 6: // Save
-                    
+                    System.out.println("Save feature not implemented yet.");
+                    continue;
                 case 7: // Load
-                    
+                    System.out.println("Load feature not implemented yet.");
+                    continue;
                 case 8: // Exit
                     running = false;
                     System.out.println("Now exiting TaskManager.");
